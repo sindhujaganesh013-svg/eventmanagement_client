@@ -13,6 +13,7 @@ const RentalDetails = () => {
 
   useEffect(() => {
     fetchRental();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
 
   const fetchRental = async () => {
@@ -156,6 +157,7 @@ const RentalDetails = () => {
                 <li>• Free cancellation up to 24 hours before</li>
               </ul>
             </div>
+
           </div>
         </div>
       </div>

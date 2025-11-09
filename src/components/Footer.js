@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './Footer.css';
 
 const Footer = () => {
@@ -6,7 +7,6 @@ const Footer = () => {
   
   const handleNewsletterSubmit = (e) => {
     e.preventDefault();
-    // Handle newsletter signup
     console.log('Newsletter signup:', email);
     setEmail('');
     alert('Thanks for subscribing to our newsletter!');
@@ -15,28 +15,31 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-container">
+        {/* Company Info */}
         <div className="footer-section">
           <h3>🎉 EventManagement</h3>
           <p>Your premier event planning and rental service. Creating unforgettable experiences since 2024.</p>
           <div className="social-links">
-            <a href="#" className="social-link" aria-label="Facebook">👤</a>
-            <a href="#" className="social-link" aria-label="Twitter">🐦</a>
-            <a href="#" className="social-link" aria-label="Instagram">📷</a>
-            <a href="#" className="social-link" aria-label="LinkedIn">💼</a>
+            <a href="https://facebook.com" className="social-link" aria-label="Facebook" target="_blank" rel="noopener noreferrer">👤</a>
+            <a href="https://twitter.com" className="social-link" aria-label="Twitter" target="_blank" rel="noopener noreferrer">🐦</a>
+            <a href="https://instagram.com" className="social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">📷</a>
+            <a href="https://linkedin.com" className="social-link" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">💼</a>
           </div>
         </div>
-        
+
+        {/* Quick Links */}
         <div className="footer-section">
           <h4>Quick Links</h4>
           <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/contact">Contact Us</a></li>
-            <li><a href="/rentals">Browse Rentals</a></li>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Terms & Conditions</a></li>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/contact">Contact Us</Link></li>
+            <li><Link to="/rentals">Browse Rentals</Link></li>
+            <li><Link to="/about">About Us</Link></li>
+            <li><Link to="/terms">Terms & Conditions</Link></li>
           </ul>
         </div>
-        
+
+        {/* Contact Info */}
         <div className="footer-section">
           <h4>Contact Info</h4>
           <p>📧 info@eventmanagement.com</p>
@@ -44,7 +47,8 @@ const Footer = () => {
           <p>📍 123 Event Street, City, State 12345</p>
           <p>⏰ Mon-Fri: 9AM-6PM</p>
         </div>
-        
+
+        {/* Newsletter */}
         <div className="footer-section">
           <h4>Newsletter</h4>
           <p>Subscribe to get the latest updates on events and special offers!</p>
@@ -71,3 +75,4 @@ const Footer = () => {
 };
 
 export default Footer;
+

@@ -70,7 +70,8 @@ const Login = () => {
               required
             />
             <div className="forgot-password">
-              <a href="#">Forgot password?</a>
+              {/* ✅ Fixed the invalid href */}
+              <Link to="/forgot-password">Forgot password?</Link>
             </div>
           </div>
           <button type="submit" className="btn-login" disabled={loading}>
@@ -80,7 +81,7 @@ const Login = () => {
         <div className="login-footer">
           <p>Test Admin: admin@eventmanagement.com | admin123</p>
           <p className="signup-link">
-            Don't have an account? <Link to="/signup">Sign up here</Link>
+            Don’t have an account? <Link to="/signup">Sign up here</Link>
           </p>
         </div>
       </div>

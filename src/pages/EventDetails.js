@@ -9,8 +9,10 @@ const EventDetails = () => {
   const [event, setEvent] = useState(null);
   const [loading, setLoading] = useState(true);
 
+  // ✅ Correct and clean useEffect
   useEffect(() => {
     fetchEvent();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
 
   const fetchEvent = async () => {
@@ -45,19 +47,23 @@ const EventDetails = () => {
 
         <div className="event-details-hero">
           <div className="event-image-container">
-            <img 
-              src={event.imageUrl || 'https://via.placeholder.com/800x400?text=Event+Image'} 
+            <img
+              src={event.imageUrl || 'https://via.placeholder.com/800x400?text=Event+Image'}
               alt={event.name}
               className="event-detail-image"
             />
+
             {!isPastEvent && (
               <div className="countdown-badge-large">
-                {daysUntil === 0 ? 'Today!' : daysUntil === 1 ? 'Tomorrow' : `${daysUntil} days left`}
+                {daysUntil === 0
+                  ? 'Today!'
+                  : daysUntil === 1
+                  ? 'Tomorrow'
+                  : `${daysUntil} days left`}
               </div>
             )}
-            {isPastEvent && (
-              <div className="past-event-badge">Past Event</div>
-            )}
+
+            {isPastEvent && <div className="past-event-badge">Past Event</div>}
           </div>
 
           <div className="event-details-content">
@@ -76,12 +82,14 @@ const EventDetails = () => {
                 <div className="info-icon">📅</div>
                 <div className="info-content">
                   <h3>Date & Time</h3>
-                  <p>{eventDate.toLocaleDateString('en-US', { 
-                    weekday: 'long', 
-                    year: 'numeric', 
-                    month: 'long', 
-                    day: 'numeric' 
-                  })}</p>
+                  <p>
+                    {eventDate.toLocaleDateString('en-US', {
+                      weekday: 'long',
+                      year: 'numeric',
+                      month: 'long',
+                      day: 'numeric',
+                    })}
+                  </p>
                   <p className="info-detail">{event.time || '6:00 PM - 10:00 PM'}</p>
                 </div>
               </div>
@@ -91,10 +99,12 @@ const EventDetails = () => {
                 <div className="info-content">
                   <h3>Location</h3>
                   <p>{event.location}</p>
-                  <a href={`https://maps.google.com/?q=${encodeURIComponent(event.location)}`} 
-                     target="_blank" 
-                     rel="noopener noreferrer"
-                     className="map-link">
+                  <a
+                    href={`https://maps.google.com/?q=${encodeURIComponent(event.location)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="map-link"
+                  >
                     View on Map
                   </a>
                 </div>
@@ -122,7 +132,7 @@ const EventDetails = () => {
             <div className="event-description">
               <h2>About This Event</h2>
               <p>{event.description}</p>
-              
+
               <div className="event-highlights">
                 <h3>Event Highlights</h3>
                 <ul>

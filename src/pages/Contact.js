@@ -39,11 +39,12 @@ const Contact = () => {
           </div>
           
           <div className="social-links">
-            <a href="#" className="social-link" aria-label="Facebook">👤</a>
-            <a href="#" className="social-link" aria-label="Twitter">🐦</a>
-            <a href="#" className="social-link" aria-label="Instagram">📷</a>
-            <a href="#" className="social-link" aria-label="LinkedIn">💼</a>
-          </div>
+  <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="Facebook">👤</a>
+  <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="Twitter">🐦</a>
+  <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="Instagram">📷</a>
+  <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="LinkedIn">💼</a>
+</div>
+
         </div>
 
         <div className="contact-form-section">

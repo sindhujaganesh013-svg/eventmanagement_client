@@ -30,6 +30,8 @@ function App() {
           <Navbar />
           <main className="main-content">
             <Routes>
+              {/* Public Routes */}
+              
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<AboutUs />} />
               <Route path="/contact" element={<Contact />} />
@@ -37,8 +39,12 @@ function App() {
               <Route path="/login" element={<Login />} />
               <Route path="/signup" element={<Signup />} />
               <Route path="/test-auth" element={<AuthTest />} />
-              <Route path="/event/:id" element={<EventDetails />} />
+
+              {/* Event and Rental Details */}
+              <Route path="/rentals/event/:id" element={<EventDetails />} />
               <Route path="/rental/:id" element={<RentalDetails />} />
+
+              {/* Admin Routes (Protected) */}
               <Route
                 path="/admin/dashboard"
                 element={
@@ -71,6 +77,8 @@ function App() {
                   </ProtectedRoute>
                 }
               />
+
+              {/* 404 Page */}
               <Route path="*" element={<NotFound />} />
             </Routes>
           </main>
